@@ -1,5 +1,6 @@
 #include "Hero.h"
 
+//------------------Constructor & Destructor---------------
 Hero::Hero(string name,int h,int p){
     heroName = name;
     health = h;
@@ -7,6 +8,7 @@ Hero::Hero(string name,int h,int p){
 }
 Hero::~Hero(){}
 
+//----------------Getters--------------------
 string Hero::getName() const{
     return heroName;
 }
@@ -17,6 +19,7 @@ int Hero::getPower(){
     return basePower;
 }
 
+//---------------Member Functions------------------
 void Hero::takeDamage(int dmg){
     health -= dmg;
     if(health<0){
@@ -25,6 +28,7 @@ void Hero::takeDamage(int dmg){
     }
 }
 
+//--------------Operator Overloading-------------
 bool Hero::operator>(Hero& other){
     if(basePower > other.basePower){
         return true;

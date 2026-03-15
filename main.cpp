@@ -12,9 +12,11 @@ int main() {
     cout << "Enter the name of your guild: ";
     getline(cin, guildName);
 
+    //Making the object of Guild class
     Guild myGuild(guildName);
     int choice;
     do {
+        //Taking the choice fronm the user
         cout << "\nChoose Hero Type to Add:\n";
         cout << "1. Hero\n2. Warrior\n3. Knight\n4. Display Guild Stats\n5. Exit\n";
         cout << "Enter your choice: ";
@@ -40,7 +42,8 @@ int main() {
                 cout << "Guild is at full capacity!" << endl;
             } 
             else {
-                myGuild += new Hero(name, health, power); // Guild owns the hero
+                myGuild += new Hero(name, health, power); 
+                // Guild owns the hero
                 cout << name << " added to the guild!" << endl;
             }
         }
@@ -109,7 +112,5 @@ int main() {
         }
 
     } while (choice != 5);
-
-    // Destructor of Guild automatically deletes all heroes
     return 0;
 }

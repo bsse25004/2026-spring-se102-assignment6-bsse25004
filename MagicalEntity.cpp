@@ -1,5 +1,6 @@
 #include "MagicalEntity.h"
 
+//---------------Constructor-------------
 MagicalEntity::MagicalEntity(int mana, int spell){
     spellPower = spell;
     manaPool = mana;

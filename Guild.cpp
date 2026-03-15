@@ -1,5 +1,6 @@
 #include  "Guild.h"
 
+//---------------Constructor & Destructor-------------
 Guild::Guild(string name){
     guildName = name;
     memberCount = 0;
@@ -12,9 +13,13 @@ Guild::~Guild(){
     cout<<"The guild Gondor has been disbanded!"<<endl;
 }
 
+//Getter
 int Guild::getMemberCount()const{
     return memberCount;
 }
+
+//-----------------Member Functions----------------
+//calculating Total Guild Power
 int Guild::calculateTotalGuildPower(){
     int total = 0;
     for(int i=0;i<memberCount;i++){
@@ -22,6 +27,7 @@ int Guild::calculateTotalGuildPower(){
     }
     return total;
 }
+//displaying Guild Stats
 void Guild::displayGuildStats(){
 
     cout<<"Guild Name: "<<guildName<<endl;
@@ -29,6 +35,7 @@ void Guild::displayGuildStats(){
     cout<<"Total Guild Power: "<<calculateTotalGuildPower()<<endl;
 }
 
+//-------------Operator OverLoadings-------------------
 void Guild::operator+=(Hero* hero){
     
     if(memberCount<15){
